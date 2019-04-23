@@ -1,0 +1,172 @@
+/*
+*HOMEPAGE 
+*/
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat');
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css');
+@import url('https://use.fontawesome.com/releases/v5.8.1/css/all.css');
+
+body{
+    font-family: 'Montserrat', sans-serif !important;
+}
+
+/*
+* TOP BAR / BRAND LOGO / NAV ITEMS
+*/
+
+.top-bar{
+  background-color: #fdcd07;
+}
+img.logo {
+  height: 37px;
+}
+.nav-link{
+  transition: all .3s ease !important;
+  text-decoration: none;
+  color: #32332f !important;
+  font-size: 18px !important;
+  font-weight: 400;
+  letter-spacing: 1.88px;
+  padding: 10px 15px !important;
+  box-shadow: none;
+}
+.nav-link:hover::after{
+  content:' ';
+  display:block;
+  border:1px solid #000;
+  width: 50%;
+  margin: 0 auto;
+}
+li{
+  display: inline;
+}
+.cart-badge {
+  background-color: #fff;
+  border-radius: 10px;
+  color: #000;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 1;
+  padding: 3px 7px;
+  text-align: center;
+  vertical-align: super;
+  white-space: nowrap;
+}
+.search{
+  background-color:transparent !important;
+  border: 1px solid #000 !important;
+}
+
+
+/*
+* HOMEPAGE HERO 
+*/
+
+.hero-image{
+  width:100%;
+  height:600px;
+  background: url('https://images.unsplash.com/photo-1530119412657-4f6cd87aad79?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=667&q=80');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size:cover;
+  background-attachment: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.hero-copy{
+  color: #fff;
+  text-align: center;
+  font-weight: 800;
+  font-size: 4vw;
+  text-shadow: #32332f 1px 0 10px;
+}
+.hero-image .btn.btn-hero {
+  width: 20%;
+  background-color: #fdcd07 !important;
+  display: flex !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+}
+
+/*
+* CONTENT TITTLE
+*/
+
+.content h2{
+  font-family: 'Montserrat', sans-serif !important;
+  text-align: center;
+}
+.content h2:after{
+    content:' ';
+    display:block;
+    border:2px solid #fdcd07;
+    width: 10%;
+    margin: 10px auto;
+}
+.copy-welcome{
+  text-align: center;
+  color: #969696;
+  font-family: 'Montserrat', sans-serif !important;
+  font-size: 18px;
+  margin-top: 30px;
+}
+ .copy-operators{
+   color: #fdcd07;
+   font-weight: 900 !important;
+ }
+
+/*
+* CONTENT PAGE
+*/
+
+.content{
+  padding: 50px;
+}
+
+
+/*
+* GRID PRODUCTS
+*/
+
+.card{
+  width: 20rem;
+  margin-top: 30px;
+}
+.card-title, .card-text{
+  text-align: center;
+}
+.card-title{
+  margin-bottom: 0.1rem !important;
+}
+.btn-primary {
+  color: #000 !important;
+  background-color: #fff !important;
+  border: 2px solid #fdcd07 !important;
+  width: 50%;
+  display: flex !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+}
+.btn-primary:hover{
+  color: #fff !important;
+  background-color: #fdcd07 !important;
+  border: 2px solid #fdcd07 !important;
+}
+
+
+/*
+* FOOTER
+*/
+
+footer{
+  position: absolute;
+  width: 100%;
+  height: 60px;
+  line-height: 40px;
+  background-color: #32332f !important
+}
+footer p{
+  color: #fff;
+  text-align: center;
+}
