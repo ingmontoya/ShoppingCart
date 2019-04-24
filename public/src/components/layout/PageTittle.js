@@ -1,14 +1,13 @@
 import React from 'react'
 
-class Hero extends React.Component{
+class PageTitle extends React.Component{
     render(){
         return(
-            <section className="hero-image">
+            <section className="page-tittle">
                 <div className="container-fluid">
                     <div className="row">
                     <div className="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                        <h1 className="hero-copy">Welcome to our lovely <br/>developer store </h1>
-                        <button type="button" class="btn btn-hero">Go to store</button>
+                        <h1 className="hero-copy">Drop us a Line</h1>
                     </div>
                     </div>
                 </div>
@@ -18,4 +17,4 @@ class Hero extends React.Component{
 }
 
 
-export default Hero
+export default PageTitle

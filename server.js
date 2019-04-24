@@ -1,4 +1,5 @@
 
+var cors = require('cors')
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
@@ -8,6 +9,7 @@ const app = express();
 */
 
 const user = require('./modules/users/routes/user.route'); // Imports routes for the user
+const product = require('./modules/product/routes/product.route'); // Imports routes for the user
 
 /*Connect to database
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
@@ -27,10 +29,18 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 /*Body Parser
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 */
-
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use('/users', user);
+app.use('/product', product);
+
+app.use(function(req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
+  next();
+});
+
 
 
 app.listen(8000, () => {

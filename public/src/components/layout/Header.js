@@ -1,4 +1,5 @@
 import React from "react"
+import {NavLink} from 'react-router-dom'
 
 class Header extends React.Component{
     render(){
@@ -14,13 +15,13 @@ class Header extends React.Component{
                     </a>
                     <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
                     <li className="nav-item active">
-                        <a className="nav-link" href="#">Home <span className="sr-only">(current)</span></a>
+                        <NavLink exact to="/">Home</NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Products</a>
+                        <NavLink exact to="/shop">Shop</NavLink>
                     </li>
                     <li className="nav-item">
-                        <a className="nav-link" href="#">Contact us</a>
+                        <NavLink exact to="/contact">Contact us</NavLink>
                     </li>
                     </ul>
                 </div>
@@ -29,8 +30,8 @@ class Header extends React.Component{
                     <button className="btn  my-2 my-sm-0" type="submit"><i className="fa fa-search"></i> </button>
                 </form>
                 <ul className="navbar-nav pr-2 ml-2 mt-2 mt-lg-0">
-                    <li className="mr-2"><a href="#" id="cart" className="text-dark"><i className="fa fa-user"></i> </a></li>
-                    <li><a href="#" id="cart" className="text-dark"><i className="fa fa-shopping-cart"></i> <span className="cart-badge">3</span></a></li>
+                    <li className="mr-2"><a href="/" id="cart" className="text-dark"><i className="fa fa-user"></i> </a></li>
+                    <li><a href="/" id="cart" className="text-dark"><i className="fa fa-shopping-cart"></i> <span className="cart-badge">3</span></a></li>
                 </ul> 
             </nav>
         )
