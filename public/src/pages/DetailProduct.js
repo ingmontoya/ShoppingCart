@@ -16,7 +16,6 @@ class DetailProduct extends Component {
         productname:  '', 
         productimage:''
     }
-    console.log(props);
   }
 
   componentDidMount() {

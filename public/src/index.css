@@ -91,16 +91,34 @@ li{
   justify-content: center !important;
   margin: 0 auto !important;
 }
+/*
+* HOMEPAGE SHOP BY CATEGORIES 
+*/
+.categories{
+  width: 100%;
+  height:500px;
+  display: flex;
+  align-items: center;
+  background: rgba(210,255,82,1);
+  background: -moz-linear-gradient(45deg, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+  background: -webkit-gradient(left bottom, right top, color-stop(0%, rgba(210,255,82,1)), color-stop(100%, rgba(145,232,66,1)));
+  background: -webkit-linear-gradient(45deg, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+  background: -o-linear-gradient(45deg, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+  background: -ms-linear-gradient(45deg, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+  background: linear-gradient(45deg, rgba(210,255,82,1) 0%, rgba(145,232,66,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#d2ff52', endColorstr='#91e842', GradientType=1 );
+
+}
 
 /*
 * CONTENT TITTLE
 */
 
-.content h2{
+.content h2, .cat h2{
   font-family: 'Montserrat', sans-serif !important;
   text-align: center;
 }
-.content h2:after{
+.content h2:after, .cat h2:after{
     content:' ';
     display:block;
     border:2px solid #fdcd07;
@@ -139,7 +157,7 @@ li{
   border: unset !important;
 }
 .card-img-top{
-  min-height: 235px !important;
+  max-height: 210px !important;
 }
 .card-title, .card-text{
   text-align: center;
@@ -215,4 +233,13 @@ footer p{
 */
 .btn.btn-primary.to-left {
   float: left;
+}
+
+.category-img img, .category-img h3 {
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  color: #000 !important;
+  margin-top: 15px;
+  font-weight: bold;
 }

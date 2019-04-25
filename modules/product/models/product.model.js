@@ -5,7 +5,7 @@ let ProductSchema = new Schema({
     productname: {type: String, required: true, max: 128},
     productprice: {type: String, required: true, max: 32},
     productdescription: {type: String, required: true, max: 128},
-    productimage: {type: String, required: true, max: 128},
+    productimage: {type: String, required: true, max: 128, default: "/product/images/new-product.gif"},
     productcategory:{
         categoryname:{type: String, required:true, max:128}
     }

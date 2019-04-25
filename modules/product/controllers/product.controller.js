@@ -8,7 +8,7 @@ exports.product_create = function (req, res, next) {
             productname: req.body.productName,
             productprice: req.body.ProductPrice,
             productdescription: req.body.productDescription,
-            productimage: "/product/images/"+req.body.productName+"-"+req.body.productImage,
+            productimage: req.body.productImage,
             productcategory:{
                 categoryname:req.body.categoryname
             }
@@ -36,6 +36,14 @@ exports.product_details = function (req, res, next) {
 // get all products
 exports.get_products = function (req, res) {
     Product.find(function (err, product) {
+        // eslint-disable-next-line 
+        if (err) return next(err);
+            res.send(product);
+    })
+};
+// get products by category
+exports.get_products_category = function (req, res) {
+    Product.find({productcategory:{categoryname:req.params.categoryname}},function (err, product) { 
         // eslint-disable-next-line 
         if (err) return next(err);
             res.send(product);

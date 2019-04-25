@@ -7,6 +7,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import Home from './pages/Home'
 import Contact from './pages/Contact'
 import DetailProduct from './pages/DetailProduct'
+import ContentCategory from './pages/ContentCategory'
 import './App.css';
 
 class App extends Component {
@@ -21,6 +22,7 @@ class App extends Component {
             <Route exact path="/" component={Home} />
             <Route exact path="/contact"  component={Contact} />
             <Route exact path="/DetailProduct/:id"  component={DetailProduct} />
+            <Route exact path="/ContentCategory/:id"  component={ContentCategory} />
         </BrowserRouter>
       </div>
     );

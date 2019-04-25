@@ -1,23 +1,30 @@
 import React from "react"
 import {NavLink} from 'react-router-dom'
+import {Modal} from 'react-bootstrap'
+import FormProduct from "./FormProduct";
 
 class Header extends React.Component{
-    constructor(props){
-        super(props);
+    constructor(props, context) {
+        super(props, context);
+        this.handleShow = this.handleShow.bind(this);
+        this.handleClose = this.handleClose.bind(this);
             this.state= {
+               show: false,
                searchValue:''
             }
     }
+    handleClose() {
+        this.setState({ show: false });
+    }
+    handleShow() {
+        this.setState({ show: true });
+    }
     Handlefind = (e) =>{
         e.preventDefault();
-
        const searchForm = this.state 
        this.props.dataSearch(searchForm);
  
-      
-      
-
-      //reinicar formulario
+      //reset search
       this.setState({
         searchValue:''
       })
@@ -55,9 +62,12 @@ class Header extends React.Component{
                     <button className="btn  my-2 my-sm-0" type="submit"><i className="fa fa-search"></i> </button>
                 </form>
                 <ul className="navbar-nav pr-2 ml-2 mt-2 mt-lg-0">
-                    <li className="mr-2"><a href="/" id="cart" className="text-dark"><i className="fa fa-user"></i> </a></li>
+                    <li className="mr-2"><a href="#" onClick={this.handleShow} id="cart" className="text-dark"><i className="fa fa-plus"></i> </a></li>
                     <li><a href="/" id="cart" className="text-dark"><i className="fa fa-shopping-cart"></i> <span className="cart-badge">3</span></a></li>
-                </ul> 
+                </ul>
+                <Modal show={this.state.show} onHide={this.handleClose}>
+                    <FormProduct />
+                </Modal> 
             </nav>
         )
     }
