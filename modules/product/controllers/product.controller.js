@@ -25,7 +25,7 @@ exports.product_create = function (req, res, next) {
 };
 
 // controllers/products.controller.js
-exports.product_details = function (req, res) {
+exports.product_details = function (req, res, next) {
     Product.findById(req.params.id, function (err, product) {
         // eslint-disable-next-line 
         if (err) return next(err);

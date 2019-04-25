@@ -6,7 +6,6 @@ import Header from '../components/layout/Header'
 import Footer from '../components/layout/Footer'
 import Hero from '../components/layout/Hero'
 import Content from '../components/layout/Content'
-import 'bootstrap/dist/css/bootstrap.css';
 import '../App.css';
 
 class Home extends Component {

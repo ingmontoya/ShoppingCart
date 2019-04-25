@@ -2,6 +2,34 @@ import React from "react"
 import {NavLink} from 'react-router-dom'
 
 class Header extends React.Component{
+    constructor(props){
+        super(props);
+            this.state= {
+               searchValue:''
+            }
+    }
+    Handlefind = (e) =>{
+        e.preventDefault();
+
+       const searchForm = this.state 
+       this.props.dataSearch(searchForm);
+ 
+      
+      
+
+      //reinicar formulario
+      this.setState({
+        searchValue:''
+      })
+        
+    }
+
+    HandleSearch = (e) =>{
+        this.setState({
+          [e.target.name]: e.target.value
+        })
+    }
+
     render(){
         return(
             <nav className="navbar navbar-expand-lg navbar-dark top-bar">
@@ -10,7 +38,7 @@ class Header extends React.Component{
                 </button>
                 <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
                     <a className="navbar-brand" href="/">
-                        <img className="logo" src="images/logo-dark.svg" alt="Condor Labs logo" />
+                        <img className="logo" src="/images/logo-dark.svg" alt="Condor Labs logo" />
                         <img className="logo" src="/images/logo-text-dark.svg" alt="Condor Labs logo" />
                     </a>
                     <ul className="navbar-nav ml-auto mt-2 mt-lg-0">
@@ -18,15 +46,12 @@ class Header extends React.Component{
                         <NavLink exact to="/">Home</NavLink>
                     </li>
                     <li className="nav-item">
-                        <NavLink exact to="/shop">Shop</NavLink>
-                    </li>
-                    <li className="nav-item">
                         <NavLink exact to="/contact">Contact us</NavLink>
                     </li>
                     </ul>
                 </div>
-                <form className="form-inline my-2 my-lg-0">
-                    <input className="form-control  search" type="search" placeholder=" " aria-label="Search" />
+                <form className="form-inline my-2 my-lg-0" onSubmit={this.Handlefind}>
+                    <input className="form-control  search" type="search" placeholder=" " aria-label="Search" onChange={this.HandleSearch} value={this.state.searchValue} name="searchValue"/>
                     <button className="btn  my-2 my-sm-0" type="submit"><i className="fa fa-search"></i> </button>
                 </form>
                 <ul className="navbar-nav pr-2 ml-2 mt-2 mt-lg-0">

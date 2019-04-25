@@ -210,3 +210,9 @@ footer p{
     width: 10%;
     margin: 10px 1px 25px;
 }
+/*
+* PRODUCT DETAIL
+*/
+.btn.btn-primary.to-left {
+  float: left;
+}
