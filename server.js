@@ -44,7 +44,7 @@ app.use(function(req, res, next) {
 
 
 
-app.listen(8000, () => {
+app.listen(process.env.PORT || 8000, () => {
   // eslint-disable-next-line 
   console.log('Server started!');
 });

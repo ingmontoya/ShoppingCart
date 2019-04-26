@@ -30,7 +30,7 @@ class Content extends React.Component{
     
     render(){
         return(
-            <div>
+            <div className="home">
                     <section className="cat"> 
                         <div className="categories">
                             <div className="container">

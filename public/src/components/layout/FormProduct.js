@@ -11,7 +11,7 @@ class FormProduct extends React.Component {
         this.onChangeProductPrice=this.onChangeProductPrice.bind(this);
         this.onChangeProductDescription=this.onChangeProductDescription.bind(this);
         this.onChangeProductImage=this.onChangeProductImage.bind(this);
-        //this.onChangeProductCategory=this.onChangeProductCategory.bind(this);
+        this.onChangeProductCategory=this.onChangeProductCategory.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
   
       this.state = {
@@ -64,20 +64,12 @@ class FormProduct extends React.Component {
             productName: this.state.productName,
             productPrice: this.state.productPrice,
             productDescription: this.state.productDescription,
-            productImage: this.state.productImage
+            categoryname:this.state.categoryname
         };
         console.log(newProduct);
-        const axiosParams = {
-            headers: {
-              'Content-Type': 'application/x-www-form-urlencoded',
-              'Accept': 'application/json',
-            },
-          };
-        axios.post('localhost:8000/product/create', newProduct, axiosParams)
-            .then(res => console.log(res.data))
+        axios.post('http://localhost:8000/product/create', newProduct)
+            .then(res => console.log("DATOS = "+res.data))
             .catch(function(error){
-                console.log(error)
-                console.log(error.response.data)
             })
     }
 
@@ -103,8 +95,12 @@ class FormProduct extends React.Component {
                             <input type="text" className="form-control" id="description" aria-describedby="nameHelp" name="productDescription"value={this.state.productDescription} onChange={this.onChangeProductDescription}/>
                         </div>
                         <div className="form-group">
-                        <label >Product Image</label>
-                            <input type="file" className="form-control-file" id="image" aria-describedby="nameHelp" name="productImage" value={this.state.productImage} onChange={this.onChangeProductImage}/>
+                        <label >Product Category</label>
+                        <select class="form-control" id="exampleFormControlSelect1" value={this.state.categoryname} onChange={this.onChangeProductCategory}>
+                            <option>T-shirt</option>
+                            <option>Mugs</option>
+                        </select>
+                        
                         </div>
                         
                         <button className="btn btn-primary">Add Product</button>

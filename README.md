@@ -20,9 +20,8 @@ Functional Apis to show / Register / find by id / Find by Category
 
 ## Issues
 
-1. Couldn't add a product in the frontend ( i don't know if was cors but i couldn't figure it out)
-2. couldn't find a product in search box, i started to do it but i couldn't finish it.
-3. I couldn't figure out how to send the database
+
+1. couldn't find a product in search box, i started to do it but i couldn't finish it.
 
 
 ## Used Libraries
@@ -36,6 +35,7 @@ For frontend
     React
     axios
     bootstrap
+
 ## Notes
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).

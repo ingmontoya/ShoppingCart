@@ -17,7 +17,6 @@ exports.product_create = function (req, res, next) {
 
     product.save(function (err) {
         if (err) {
-            // eslint-disable-next-line 
             return next(err);
         }
         res.send('Product created successfully')

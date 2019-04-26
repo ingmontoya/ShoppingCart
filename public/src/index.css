@@ -156,7 +156,7 @@ li{
   margin-top: 30px;
   border: unset !important;
 }
-.card-img-top{
+.home .card-img-top{
   max-height: 210px !important;
 }
 .card-title, .card-text{

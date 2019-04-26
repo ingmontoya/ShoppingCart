@@ -19,23 +19,6 @@ class Header extends React.Component{
     handleShow() {
         this.setState({ show: true });
     }
-    Handlefind = (e) =>{
-        e.preventDefault();
-       const searchForm = this.state 
-       this.props.dataSearch(searchForm);
- 
-      //reset search
-      this.setState({
-        searchValue:''
-      })
-        
-    }
-
-    HandleSearch = (e) =>{
-        this.setState({
-          [e.target.name]: e.target.value
-        })
-    }
 
     render(){
         return(
@@ -58,7 +41,7 @@ class Header extends React.Component{
                     </ul>
                 </div>
                 <form className="form-inline my-2 my-lg-0" onSubmit={this.Handlefind}>
-                    <input className="form-control  search" type="search" placeholder=" " aria-label="Search" onChange={this.HandleSearch} value={this.state.searchValue} name="searchValue"/>
+                    <input className="form-control  search" type="search" placeholder=" " aria-label="Search"   name="searchValue"/>
                     <button className="btn  my-2 my-sm-0" type="submit"><i className="fa fa-search"></i> </button>
                 </form>
                 <ul className="navbar-nav pr-2 ml-2 mt-2 mt-lg-0">
