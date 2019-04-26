@@ -19,7 +19,7 @@ class DetailProduct extends Component {
   }
 
   componentDidMount() {
-    axios.get('http://localhost:8000/product/'+this.props.match.params.id)
+    axios.get('https://condorshopping.herokuapp.com/product/'+this.props.match.params.id)
         .then(response => {
                 this.setState({
                   productname:response.data.productname, 

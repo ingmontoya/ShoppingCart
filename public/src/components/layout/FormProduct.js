@@ -67,7 +67,7 @@ class FormProduct extends React.Component {
             categoryname:this.state.categoryname
         };
         console.log(newProduct);
-        axios.post('http://localhost:8000/product/create', newProduct)
+        axios.post('https://condorshopping.herokuapp.com/product/create', newProduct)
             .then(res => console.log("DATOS = "+res.data))
             .catch(function(error){
             })

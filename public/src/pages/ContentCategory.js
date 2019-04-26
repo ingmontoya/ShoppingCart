@@ -18,7 +18,7 @@ class Content extends React.Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8000/product/category/'+this.props.match.params.id)
+        axios.get('https://condorshopping.herokuapp.com/product/category/'+this.props.match.params.id)
             .then(response => {
                     this.setState({productsbycategory:response.data});
                 })

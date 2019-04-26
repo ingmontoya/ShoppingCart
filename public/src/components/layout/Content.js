@@ -13,7 +13,7 @@ class Content extends React.Component{
     }
 
     componentDidMount() {
-        axios.get('http://localhost:8000/product/')
+        axios.get('https://condorshopping.herokuapp.com/product/')
             .then(response => {
                     this.setState({products:response.data});
                 })
