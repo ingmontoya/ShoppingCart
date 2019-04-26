@@ -43,10 +43,11 @@ app.use(function(req, res, next) {
   next();
 });
 
+app.use(express.static('build'));
 
-app.get('*',(req, res) => {
-  const index = path.join(__dirname, 'build', 'index.html');
-  res.sendFile(index);
+
+app.get('*', function (req, res) {
+  res.sendFile('index.html');
 });
 
 
