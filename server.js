@@ -45,10 +45,10 @@ app.use(function(req, res, next) {
 
 
 if (process.env.NODE_ENV === 'production') {
-	app.use(express.static('client/build'));
+	app.use(express.static('public/build'));
 }
 app.get('*', (request, response) => {
-	response.sendFile(path.join(__dirname, 'client/build', 'index.html'));
+	response.sendFile(path.join(__dirname, 'public/build', 'index.html'));
 });
 
 app.listen(process.env.PORT || 8000, () => {
