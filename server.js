@@ -45,10 +45,10 @@ app.use(function(req, res, next) {
 
 
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static(path.join(__dirname, 'build')));
+  app.use(express.static(path.join('condorshopping', 'build')));
 }
 app.get('*',(req, res) => {
-  const index = path.join(__dirname, 'build', 'index.html');
+  const index = path.join('condorshopping', 'build', 'index.html');
   res.sendFile(index);
 });
 
