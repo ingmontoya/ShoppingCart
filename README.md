@@ -38,4 +38,10 @@ For frontend
 
 ## Notes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
+2. For Runing this project, please update the api to (http://localhost:8000) the following files: 
+    src/components/layout/Content.js
+    src/components/layout/FormProduct.js
+    src/pages/ContentCategory.js
+    src/pages/DetailProduct.js
+
