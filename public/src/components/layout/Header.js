@@ -1,23 +1,33 @@
 import React from "react"
 import {NavLink} from 'react-router-dom'
-import {Modal} from 'react-bootstrap'
+import {Modal, Button} from 'react-bootstrap'
 import FormProduct from "./FormProduct";
+import ShoppingCart from '../shop/ShoppingCart'
 
 class Header extends React.Component{
     constructor(props, context) {
         super(props, context);
         this.handleShow = this.handleShow.bind(this);
+        this.handleShowCart = this.handleShowCart.bind(this);
         this.handleClose = this.handleClose.bind(this);
+        this.handleCloseCart = this.handleCloseCart.bind(this);
             this.state= {
                show: false,
+               showCart: false,
                searchValue:''
             }
     }
     handleClose() {
         this.setState({ show: false });
     }
+    handleCloseCart() {
+        this.setState({ showCart:false });
+    }
     handleShow() {
         this.setState({ show: true });
+    }
+    handleShowCart() {
+        this.setState({ showCart: true });
     }
 
     render(){
@@ -46,10 +56,19 @@ class Header extends React.Component{
                 </form>
                 <ul className="navbar-nav pr-2 ml-2 mt-2 mt-lg-0">
                     <li className="mr-2"><a href="#" onClick={this.handleShow} id="cart" className="text-dark"><i className="fa fa-plus"></i> </a></li>
-                    <li><a href="/" id="cart" className="text-dark"><i className="fa fa-shopping-cart"></i> <span className="cart-badge">3</span></a></li>
+                    <li><a href="#" onClick={this.handleShowCart} id="formp" className="text-dark"><i className="fa fa-shopping-cart"></i></a></li>
                 </ul>
                 <Modal show={this.state.show} onHide={this.handleClose}>
                     <FormProduct />
+                </Modal> 
+                <Modal show={this.state.showCart} onHide={this.handleCloseCart}>
+                <Modal.Header closeButton>
+                <Modal.Title>ShoppingCart</Modal.Title>
+                </Modal.Header>
+                  <ShoppingCart />
+                <Modal.Footer>
+                    <Button variant="primary">Proceed to checkout</Button>
+                </Modal.Footer>
                 </Modal> 
             </nav>
         )

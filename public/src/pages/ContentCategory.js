@@ -16,9 +16,17 @@ class Content extends React.Component{
         }
         console.log(props)
     }
-
+    checkHost(){
+        var host = document.location.hostname;
+        var apiurl='';
+        if(host==="localhost") 
+             apiurl="http://localhost:8000" 
+        else
+             apiurl="http://https://condorshopping.herokuapp.com";
+        return apiurl
+      }
     componentDidMount() {
-        axios.get('https://condorshopping.herokuapp.com/product/category/'+this.props.match.params.id)
+        axios.get(this.checkHost()+'/product/category/'+this.props.match.params.id)
             .then(response => {
                     this.setState({productsbycategory:response.data});
                 })

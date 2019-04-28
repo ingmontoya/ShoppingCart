@@ -9,15 +9,11 @@ I've tried to get all things done, but it's my first time using react and expres
 1. List of Products
 2. Product Detail
 3. Display the Products by Category
-
-Functional Apis to show / Register / find by id / Find by Category
-
-## Task uncompleted
-
 4. Add Products to the Shopping Cart
 5. Shopping Cart Detail
 6. Remove Products from the Shopping Cart
 
+Functional Apis to show / Register / find by id / Find by Category
 ## Issues
 
 
@@ -39,9 +35,5 @@ For frontend
 ## Notes
 
 1. This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app)
-2. For Runing this project, please update the api to (http://localhost:8000) the following files: 
-    src/components/layout/Content.js
-    src/components/layout/FormProduct.js
-    src/pages/ContentCategory.js
-    src/pages/DetailProduct.js
+2. For Runing this project, please upload the dump.json
 

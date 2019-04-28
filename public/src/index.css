@@ -84,13 +84,6 @@ li{
   font-size: 4vw;
   text-shadow: #32332f 1px 0 10px;
 }
-.btn.btn-hero {
-  width: 20%;
-  background-color: #fdcd07 !important;
-  display: flex !important;
-  justify-content: center !important;
-  margin: 0 auto !important;
-}
 /*
 * HOMEPAGE SHOP BY CATEGORIES 
 */

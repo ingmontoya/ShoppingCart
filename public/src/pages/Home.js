@@ -9,6 +9,7 @@ import Content from '../components/layout/Content'
 import '../App.css';
 
 class Home extends Component {
+
   render() {
     return (
       <div className="App">

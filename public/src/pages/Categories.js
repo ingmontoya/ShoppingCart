@@ -18,7 +18,7 @@ class Home extends Component {
       <div className="App">
         <Header />
         <Hero />
-        <ContentCategory/>
+        <ContentCategory />
         <Footer />
       </div>
     );

@@ -8,6 +8,7 @@ import Home from './pages/Home'
 import Contact from './pages/Contact'
 import DetailProduct from './pages/DetailProduct'
 import ContentCategory from './pages/ContentCategory'
+import ShoppingCart from './components/shop/ShoppingCart'
 import './App.css';
 
 class App extends Component {
@@ -23,6 +24,7 @@ class App extends Component {
             <Route exact path="/contact"  component={Contact} />
             <Route exact path="/DetailProduct/:id"  component={DetailProduct} />
             <Route exact path="/ContentCategory/:id"  component={ContentCategory} />
+            <Route exact path="/ShoppingCart"  component={ShoppingCart} />
         </BrowserRouter>
       </div>
     );

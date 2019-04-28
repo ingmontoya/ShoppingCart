@@ -56,7 +56,15 @@ class FormProduct extends React.Component {
             categoryname: e.target.value
         });
     }
-
+    checkHost(){
+        var host = document.location.hostname;
+        var apiurl='';
+        if(host==="localhost") 
+             apiurl="http://localhost:8000" 
+        else
+             apiurl="http://https://condorshopping.herokuapp.com";
+        return apiurl
+      }
 
     onSubmit(e) {
         e.preventDefault();
@@ -67,7 +75,7 @@ class FormProduct extends React.Component {
             categoryname:this.state.categoryname
         };
         console.log(newProduct);
-        axios.post('https://condorshopping.herokuapp.com/product/create', newProduct)
+        axios.post(this.checkHost()+'/product/create', newProduct)
             .then(res => console.log("DATOS = "+res.data))
             .catch(function(error){
             })
@@ -96,7 +104,7 @@ class FormProduct extends React.Component {
                         </div>
                         <div className="form-group">
                         <label >Product Category</label>
-                        <select class="form-control" id="exampleFormControlSelect1" value={this.state.categoryname} onChange={this.onChangeProductCategory}>
+                        <select className="form-control" id="exampleFormControlSelect1" value={this.state.categoryname} onChange={this.onChangeProductCategory}>
                             <option>T-shirt</option>
                             <option>Mugs</option>
                         </select>

@@ -17,9 +17,18 @@ class DetailProduct extends Component {
         productimage:''
     }
   }
+  checkHost(){
+    var host = document.location.hostname;
+    var apiurl='';
+    if(host==="localhost") 
+         apiurl="http://localhost:8000" 
+    else
+         apiurl="http://https://condorshopping.herokuapp.com";
+    return apiurl
+  }
 
   componentDidMount() {
-    axios.get('https://condorshopping.herokuapp.com/product/'+this.props.match.params.id)
+    axios.get(this.checkHost()+'/product/'+this.props.match.params.id)
         .then(response => {
                 this.setState({
                   productname:response.data.productname, 

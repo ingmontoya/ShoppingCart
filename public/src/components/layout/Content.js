@@ -4,16 +4,24 @@ import axios from 'axios'
 import {Link} from 'react-router-dom'
 
 class Content extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             products:[],
             category:'t-shirt'
         }
     }
-
+    checkHost(){
+        var host = document.location.hostname;
+        var apiurl='';
+        if(host==="localhost") 
+             apiurl="http://localhost:8000" 
+        else
+             apiurl="http://https://condorshopping.herokuapp.com";
+        return apiurl
+      }
     componentDidMount() {
-        axios.get('https://condorshopping.herokuapp.com/product/')
+        axios.get(this.checkHost()+'/product/')
             .then(response => {
                     this.setState({products:response.data});
                 })
