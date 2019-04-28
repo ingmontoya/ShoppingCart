@@ -26,7 +26,7 @@ class ShopItem extends React.Component {
         if(host==="localhost") 
              apiurl="http://localhost:8000" 
         else
-             apiurl="http://https://condorshopping.herokuapp.com";
+             apiurl="https://condorshopping.herokuapp.com";
         return apiurl
       }
                 
